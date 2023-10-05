@@ -1,6 +1,8 @@
 package day04;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -43,6 +45,14 @@ public class TodoController {
         System.out.println("TodoController.doDelete");   System.out.println("tno = " + tno);
         return todoService.doDelete( tno );
     }
+
+    // 5. html 반환 매핑 주소만들기
+    @GetMapping("/index")
+    public Resource getIndex() {
+        return new ClassPathResource("templates/todo.html");
+    }
+
+
 }
 
 
