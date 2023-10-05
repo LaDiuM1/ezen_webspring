@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -13,8 +13,18 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="7907319f-cee2-4119-9d4d-e1612b057881">
-      <console name="springDB" type="STANDARD" schema="" session="Main"><![CDATA[use 
-select now();]]></console>
+      <console name="springDB" type="STANDARD" schema="springweb" session="Main"><![CDATA[USE springweb;
+DROP TABLE todo;
+# 테이블 생성 코드 범위 지정후 컨트롤+엔터
+CREATE TABLE  todo(
+    tno int auto_increment ,
+    tcontent varchar(100) ,
+    tstate boolean ,
+    primary key( tno )
+);
+select * from todo;
+# DB 상태 최신화
+commit;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -24,6 +34,12 @@ select now();]]></console>
     <open-files>
       <object connection-id="7907319f-cee2-4119-9d4d-e1612b057881" object-ref="consoles/springDB" />
     </open-files>
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="7907319f-cee2-4119-9d4d-e1612b057881" dataset="springweb.todo" active-filter-id="" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />

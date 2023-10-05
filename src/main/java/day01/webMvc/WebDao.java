@@ -10,18 +10,18 @@ import java.util.List;
 
 public class WebDao {   // todo 클래스
     private Connection conn;
-    private PreparedStatement ps;
-    private ResultSet rs;
+        private PreparedStatement ps;
+        private ResultSet rs;
 
 
     public WebDao(){
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/springweb", "root", "1234");
-            System.out.println("연동 성공");
-        }catch (Exception e) {
-            System.out.println("연동 실패 : "+e);
-        }
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/springweb", "root", "1234");
+                System.out.println("연동 성공");
+            }catch (Exception e) {
+                System.out.println("연동 실패 : "+e);
+            }
 
 
 
