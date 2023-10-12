@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/phoneBook.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="phonebookwrap">
+        <div class="inputArea">
+            이름 : <input class="nameValue" type="text"></input>
+            전화번호 : <input class="phoneValue" type="text"></input>
+            <button onclick="submit()" class="submit" type="button"> 등록 </button>
+        </div>
+        <table class="print" border='1'>
+            <tr>
+              <th> 이름 </th> <th> 전화번호 </th> <th> 수정하기 </th> <th> 삭제하기 </th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="/phoneBook.js"></script>
+</body>
+</html>

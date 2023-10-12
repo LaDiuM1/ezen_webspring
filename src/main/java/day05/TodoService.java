@@ -13,7 +13,7 @@ public class TodoService {
     @Autowired // 객체 생성
     private TodoEntityRepository todoEntityRepository;
 
-
+    @Transactional
     public boolean doPost(TodoDto todoDto) {
         /* 1. DTO를 Entity로 변환
             빌더패턴 사용하는 방법
@@ -31,10 +31,11 @@ public class TodoService {
     return false;
     }
 
+    @Transactional
     public List<TodoDto> doGet() {
         List<TodoEntity> todoEntities = todoEntityRepository.findAll();
 
-        List<TodoDto> list = new ArrayList<TodoDto>();
+        List<TodoDto> list = new ArrayList<>();
 
         todoEntities.forEach( entity -> {
 
@@ -56,7 +57,6 @@ public class TodoService {
 
         // 수정할 엔티티 찾기
         Optional<TodoEntity> todoEntity = todoEntityRepository.findById(todoDto.getTno());
-
         if(todoEntity.isPresent()) {
             // optional 객체 꺼내기
             TodoEntity updatedTodoEntity = todoEntity.get();
@@ -70,6 +70,7 @@ public class TodoService {
     }
     public boolean doDelete(int tno) {
         todoEntityRepository.findById(tno);
+        todoEntityRepository.deleteById(tno);
         return false;
     }
 

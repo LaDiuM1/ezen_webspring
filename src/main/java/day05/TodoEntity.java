@@ -13,13 +13,10 @@ import javax.persistence.Id;
 @NoArgsConstructor @AllArgsConstructor
 public class TodoEntity {
 
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // PK로 선정할 필드
+    @GeneratedValue(strategy = GenerationType.IDENTITY )// auto_increment
     private int tno;
-
     private String tcontent;
-
     private boolean tstate;
 
 
