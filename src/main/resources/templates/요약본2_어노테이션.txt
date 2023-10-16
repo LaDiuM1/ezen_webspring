@@ -7,7 +7,7 @@
 2. MVC
 	@Controller			    해당 클래스를 controller 사용 주입 [ 컨테이너에 빈 등록 ]
 	@RestController			해당 클래스를 controller 사용 주입 [ 컨테이너에 빈 등록 ] + @ResponseBody
-	@ResponseBody			해당 Mapping 함수들의 reponse 반환타입 을 자동으로 설정
+	@ResponseBody			해당 Mapping 함수들의 response 반환타입 을 자동으로 설정
 	@RequestMapping			해당 함수/클래스를 매핑
 	@GetMapping			    HTTP 요청 GET 함수 매핑
 	@PostMapping			HTTP 요청 Post 함수 매핑

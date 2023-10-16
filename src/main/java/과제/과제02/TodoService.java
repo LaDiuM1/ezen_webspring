@@ -68,7 +68,7 @@ public class TodoService {
     @Transactional
     public boolean doDelete(int pno) {
         todoTableRepository.deleteById(pno);
-        return true;
+        return false;
     }
 
 }

@@ -6,12 +6,27 @@ console.log('todo.js.open');
 
 function doPost(){
 
+
+
+    tcontent = document.querySelector('.tcontent').value;
+
+    if(tcontent == ''){ alert('내용을 입력해주세요.'); return; }
+
+    jsondata = { tcontent : tcontent, tstate : false };
+
+    json = JSON.stringify(jsondata);
+
+    console.log(json);
+
+
     $.ajax({
-        url:'http://localhost:80/todo/index',
+        url:'/todo',
         method:'post',
-        data:{ data : '통신성공'},
+        contentType: 'application/json',
+        data: json,
         success:data => {
-            console.log(data);
+            document.querySelector('.tcontent').value = '';
+            getList();
         },
         error:function(data){
         console.log('에러발생 : '+data)
@@ -29,9 +44,10 @@ function getList(){
 
 
     $.ajax({
-    url:'http://localhost:80/todo',
+    url:'/todo',
     method:'get',
     success: data => {
+    console.log(data);
        let todoPrint = document.querySelector('.todo_bottom');
        html = '';
 
@@ -62,6 +78,7 @@ function getList(){
 // 3. put ajax
 function doPut(tno, tstate){
 
+
     jsondata = { tno : tno, tstate : !tstate };
 
     json = JSON.stringify(jsondata);
@@ -70,12 +87,14 @@ function doPut(tno, tstate){
 
 
     $.ajax({
-        url:'http://localhost:80/todo',
+        url:'/todo',
         method:'put',
         contentType: 'application/json',
         data: json,
         success: data => {
+
             getList();
+
         },
         error:function(data){
             console.log('에러발생 : '+data)
@@ -94,7 +113,7 @@ function doDelete(tno){
 
 
         $.ajax({
-            url:'http://localhost:80/todo',
+            url:'/todo',
             method:'delete',
             data: { tno : tno },
             success: data => {

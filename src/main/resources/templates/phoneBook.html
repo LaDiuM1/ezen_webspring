@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="/phoneBook.css" rel="stylesheet">
+    <link href="/todo.css" rel="stylesheet">
 
 </head>
 <body>
 
-    <div class="phonebookwrap">
-        <div class="inputArea">
-            이름 : <input class="nameValue" type="text"></input>
-            전화번호 : <input class="phoneValue" type="text"></input>
-            <button onclick="submit()" class="submit" type="button"> 등록 </button>
-        </div>
-        <table class="print" border='1'>
-            <tr>
-              <th> 이름 </th> <th> 전화번호 </th> <th> 수정하기 </th> <th> 삭제하기 </th>
-            </tr>
-        </table>
+<div class="todowrap">
+    <h1> 전화번호부 </h1>
+
+    <div class="todo_top">  <!-- 쓰기 구역 -->
+        <input class="nameValue" type="text" placeholder="이름 입력">
+        <input class="phoneValue" type="text" placeholder="전화번호 입력">
+        <button onclick="submit()" type="button"> 등록 </button>
     </div>
+
+    <div class="todo_bottom"> <!-- 출력 구역 -->
+
+    </div>
+
+</div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="/phoneBook.js"></script>

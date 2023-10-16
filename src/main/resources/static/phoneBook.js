@@ -4,25 +4,30 @@ getList()
 function getList(){
 
     $.ajax({
-        url: 'http://localhost:80/todo',
+        url: '/todo',
         type: 'get',
+        async: false,
         success: data => {
-            console.log(data);
 
-            let print = document.querySelector('.print');
-            let html = '<tr> <th> 이름 </th> <th> 전화번호 </th> <th> 수정하기 </th> <th> 삭제하기 </th> </tr>';
+            let todo_bottom = document.querySelector('.todo_bottom');
+            let html = '';
 
             data.forEach( p => {
-            console.log(p.pno);
                 html += `
-                     <tr>
-                      <td> ${p.name} </td> <td> ${p.phone} </td> <td>
-                      <button onclick="doPut(${p.pno})" type="button">수정</button> </td> <td> <button onclick="doDelete(${p.pno})" type="button">삭제</button> </td>
-                     </tr>
+                    <div class="todo"> <!-- todo 항목 1개 -->
+                                <div class="tcontent"> ${p.name} </div>
+                                <div class="tcontent"> ${p.phone} </div>
+                                <div class="etcbtns">
+                                    <button onclick="doPut(${p.pno})" type="button"> 수정 </button>
+                                    <button onclick="doDelete(${p.pno})" type="button"> 삭제 </button>
+                                </div>
+
+                    </div>
+
                 `
-                print.innerHTML = html;
 
             })
+            todo_bottom.innerHTML = html;
 
             },
         error:function(data){
@@ -39,19 +44,22 @@ function submit(){
     let name = document.querySelector('.nameValue').value;
     let phone = document.querySelector('.phoneValue').value;
 
+    if(name == '' || phone == ''){
+        alert('이름과 전화번호를 입력해주세요')
+        return;
+    }
+
     let jsondata = { name : name, phone: phone };
 
     let json = JSON.stringify(jsondata);
-    console.log(json);
 
 
     $.ajax({
-        url: 'http://localhost:80/todo',
+        url: '/todo',
         type: 'post',
         contentType: 'application/json',
         data: json,
         success: data =>{
-            console.log(data);
             document.querySelector('.nameValue').value = '';
             document.querySelector('.phoneValue').value = '';
             getList()
@@ -71,10 +79,9 @@ function doPut(pno){
     let jsondata = { pno : pno, name : name, phone: phone };
 
     let json = JSON.stringify(jsondata);
-    console.log(json);
 
     $.ajax({
-        url: 'http://localhost:80/todo',
+        url: '/todo',
         type: 'put',
         contentType: 'application/json',
         data: json,
@@ -90,11 +97,11 @@ function doDelete(pno){
     let jsondata = { pno : pno };
 
     let json = JSON.stringify(jsondata);
-    console.log(json);
 
     $.ajax({
-        url: 'http://localhost:80/todo',
+        url: '/todo',
         type: 'delete',
+        async: false,
         contentType: 'application/json',
         data: json,
         success: data =>{
@@ -102,8 +109,6 @@ function doDelete(pno){
             }
 
     })
-
-
 
 }
 
