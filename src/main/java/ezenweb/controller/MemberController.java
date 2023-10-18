@@ -26,12 +26,23 @@ public class MemberController {
 
     }
 
-
+    // 세션을 구현 안했을 때 호출
+    /*
     // 2. 회원정보 호출
     @GetMapping("/get")
     public MemberDto getMember(@RequestParam("mno") int mno) {
 
         return memberService.getMember(mno);
+    }
+    */
+
+    // 세션 구현시 회원 정보 호출
+    @GetMapping("/get")
+    public MemberDto getMember(HttpServletRequest request, @RequestParam("mno") int mno) {
+
+        HttpSession session = request.getSession();
+
+        return (MemberDto)session.getAttribute("loginDto");
     }
 
 

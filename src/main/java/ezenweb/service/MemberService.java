@@ -33,6 +33,9 @@ public class MemberService {
 
     }
 
+
+    // 세션을 구현 안했을 때 호출
+    /*
     @Transactional
     public MemberDto getMember(int mno) {
         Optional<MemberEntity> memberEntityOptional = memberEntityRepository.findById(mno);
@@ -45,6 +48,8 @@ public class MemberService {
 
         return null;
     }
+
+    */
 
     @Transactional
     public boolean updateMember(@RequestBody MemberDto memberDto) {
