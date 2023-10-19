@@ -5,6 +5,8 @@ import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "member")
@@ -32,6 +34,9 @@ public class MemberEntity extends BaseTime{
     @Column
     @ColumnDefault("'user'")
     private String mrole;   // 회원 등급
+    @Builder.Default
+    @OneToMany( mappedBy = "memberEntity" )  // 하나가 다수에게 [ PK 설정 ]
+    private List<BoardEntity> boardEntityList = new ArrayList<>();
 
     // Entity -> Dto
     public MemberDto toDto(){

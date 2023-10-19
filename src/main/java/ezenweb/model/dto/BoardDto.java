@@ -2,6 +2,7 @@ package ezenweb.model.dto;
 
 
 import ezenweb.model.entity.BoardEntity;
+import ezenweb.model.entity.MemberEntity;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -17,9 +18,9 @@ public class BoardDto {
     private String bcontent;
     private int bview;
     private String bfile;
-    private int mno;
     private LocalDateTime cdate;
     private LocalDateTime udate;
+    private MemberEntity memberEntity;
 
 
     // dto -> entity
@@ -32,7 +33,7 @@ public class BoardDto {
                 .bcontent(this.bcontent)
                 .bview(this.bview)
                 .bfile(this.bfile)
-                .mno(this.mno)
+                .memberEntity(this.memberEntity)
                 .build();
 
     }

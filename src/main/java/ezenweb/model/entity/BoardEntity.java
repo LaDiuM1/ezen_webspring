@@ -28,14 +28,17 @@ public class BoardEntity extends BaseTime{
     @Column( columnDefinition = "longtext", nullable = true)   // java String은 최대 255자만 지원하므로 longtext 사용 시 다른 방법으로 정의
                                               // columnDefinition : db 지원 형식으로 정의
     private String bcontent;
-    @Column()
+    @Column
     @ColumnDefault("0")
     private int bview;
     // BaseTime 클래스가 상속해주는 필드 1.작성일(cdate) 2.수정일(udate)
     @Column( columnDefinition = "longtext", nullable = true)
     private String bfile;
-    @Column()
-    private int mno;
+    @ToString.Exclude
+    @JoinColumn ( name="mno_fk" )
+    @ManyToOne  // 다수가 하나에게 [ FK ]
+    private MemberEntity memberEntity;
+
 
 
     // Entity -> dto
@@ -47,7 +50,7 @@ public class BoardEntity extends BaseTime{
                 .bcontent(this.bcontent)
                 .bview(this.bview)
                 .bfile(this.bfile)
-                .mno(this.mno)
+                .memberEntity(this.memberEntity)
                 .cdate(this.cdate)
                 .udate(this.udate)
                 .build();
