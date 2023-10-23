@@ -1,0 +1,15 @@
+footer{
+    padding-top: 30px;
+    border-top: solid 1px #e8e8e8;
+    display: flex;
+    justify-content: space-between;
+    width: 1400px;
+    margin: 0 auto;
+
+}
+
+nav a, .footerInfo div{
+    margin: 15px;
+
+
+}

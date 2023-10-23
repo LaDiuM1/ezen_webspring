@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'LINESeedKR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    font-family: 'LINESeedKR';
+    box-sizing: border-box;
+    color: black;
+
+}
+
+a {
+    text-align: center;
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    color: inherit; /* 링크의 색상 제거 */
+}
+
+ul{
+    list-style:none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 1400px;
+    margin: 0 auto;
+
+}
+
+
+.headerMenu{
+    display: flex;
+
+}
+
+.headerMenu li{
+    margin: 15px;
+
+}
+
