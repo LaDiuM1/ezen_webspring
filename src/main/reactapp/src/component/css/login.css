@@ -1,0 +1,48 @@
+.signupContainer{
+    width: 1400px;
+    margin: 0 auto;
+
+}
+
+.loginArea div{
+    display: flex;
+    justify-content: center;
+
+
+
+}
+.textArea{
+    width : 100px;
+    height : 30px;
+    margin: 10px;
+    align-items: center;
+    text-align: right;
+    justify-content: end;
+
+
+
+}
+
+.inputArea input{
+    width : 300px;
+    height : 30px;
+    margin: 10px 120px 10px 10px;
+
+}
+.bottomArea a{
+    margin: 5px 10px;
+
+}
+
+.loginButton button{
+    margin: 10px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    width: 250px;
+    height: 35px;
+    background-color: rgba(148, 200, 245, 0.72);
+    font-size: 20px;
+
+
+}

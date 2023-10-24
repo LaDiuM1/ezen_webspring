@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="LaDiuM">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.49">
+    <root id="1">
+      <DefaultCasing>lower/lower</DefaultCasing>
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <ServerVersion>8.0.34</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="blackjack">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="3" parent="1" name="codeflowminds">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="4" parent="1" name="information_schema">
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </schema>
+    <schema id="5" parent="1" name="jspteam4">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="6" parent="1" name="jspweb">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="7" parent="1" name="mysql">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="8" parent="1" name="performance_schema">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="9" parent="1" name="snsview">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="10" parent="1" name="springweb">
+      <IntrospectionTimestamp>2023-10-24.19:05:41</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-10-24.01:05:41</LocalIntrospectionTimestamp>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="11" parent="1" name="sqldb1">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="12" parent="1" name="sqldb1web">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="13" parent="1" name="sqldb2">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="14" parent="1" name="sqldb2sys">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="15" parent="1" name="sqldb2web">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="16" parent="1" name="sqldb2web1">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="17" parent="1" name="sqldb3web2">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="18" parent="1" name="sqldb4web">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="19" parent="1" name="sqldb6web">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="20" parent="1" name="subtest">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="21" parent="1" name="sys">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="22" parent="1" name="team4">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="23" parent="1" name="test1">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="24" parent="1" name="test123123">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <table id="25" parent="10" name="board">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="26" parent="10" name="category">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="27" parent="10" name="member">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="28" parent="10" name="porder">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="29" parent="10" name="product">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="30" parent="25" name="bno">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="31" parent="25" name="cdate">
+      <DasType>datetime(6)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="32" parent="25" name="udate">
+      <DasType>datetime(6)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="33" parent="25" name="bcontent">
+      <DasType>longtext|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="34" parent="25" name="bfile">
+      <DasType>longtext|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="35" parent="25" name="btitle">
+      <DasType>varchar(200)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="36" parent="25" name="bview">
+      <DasType>int|0s</DasType>
+      <DefaultExpression>0</DefaultExpression>
+      <Position>7</Position>
+    </column>
+    <column id="37" parent="25" name="mno_fk">
+      <DasType>int|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <foreign-key id="38" parent="25" name="FK8jrx8drmrt5ojoht11v4dqpv4">
+      <ColNames>mno_fk</ColNames>
+      <RefColNames>mno</RefColNames>
+      <RefTableName>member</RefTableName>
+    </foreign-key>
+    <index id="39" parent="25" name="PRIMARY">
+      <ColNames>bno</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="40" parent="25" name="FK8jrx8drmrt5ojoht11v4dqpv4">
+      <ColNames>mno_fk</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="41" parent="25" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="42" parent="26" name="cno">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="43" parent="26" name="cname">
+      <DasType>varchar(40)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <index id="44" parent="26" name="PRIMARY">
+      <ColNames>cno</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="45" parent="26" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="46" parent="27" name="mno">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="47" parent="27" name="cdate">
+      <DasType>datetime(6)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="48" parent="27" name="udate">
+      <DasType>datetime(6)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="49" parent="27" name="memail">
+      <DasType>varchar(50)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="50" parent="27" name="mname">
+      <DasType>varchar(20)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="51" parent="27" name="mpassword">
+      <DasType>varchar(30)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="52" parent="27" name="mphone">
+      <DasType>varchar(13)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="53" parent="27" name="mrole">
+      <DasType>varchar(255)|0s</DasType>
+      <DefaultExpression>&apos;user&apos;</DefaultExpression>
+      <Position>8</Position>
+    </column>
+    <index id="54" parent="27" name="PRIMARY">
+      <ColNames>mno</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="55" parent="27" name="UK_2r6umf1c0uyfmvwp30vmb3gjr">
+      <ColNames>memail</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="56" parent="27" name="UK_n2q2yivqxxmkd9ryafbdfmahf">
+      <ColNames>mphone</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="57" parent="27" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="58" parent="27" name="UK_2r6umf1c0uyfmvwp30vmb3gjr">
+      <UnderlyingIndexName>UK_2r6umf1c0uyfmvwp30vmb3gjr</UnderlyingIndexName>
+    </key>
+    <key id="59" parent="27" name="UK_n2q2yivqxxmkd9ryafbdfmahf">
+      <UnderlyingIndexName>UK_n2q2yivqxxmkd9ryafbdfmahf</UnderlyingIndexName>
+    </key>
+    <column id="60" parent="28" name="ono">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="61" parent="28" name="oprice">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="62" parent="28" name="pno_fk">
+      <DasType>int|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <foreign-key id="63" parent="28" name="FK3aioeis8uaonossuuxany7bdd">
+      <ColNames>pno_fk</ColNames>
+      <RefColNames>pno</RefColNames>
+      <RefTableName>product</RefTableName>
+    </foreign-key>
+    <index id="64" parent="28" name="PRIMARY">
+      <ColNames>ono</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="65" parent="28" name="FK3aioeis8uaonossuuxany7bdd">
+      <ColNames>pno_fk</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="66" parent="28" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="67" parent="29" name="pno">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="68" parent="29" name="pname">
+      <DasType>varchar(40)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="69" parent="29" name="cno_fk">
+      <DasType>int|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <foreign-key id="70" parent="29" name="FKqk00dnsxiu2pyvmhlnqo1a7qa">
+      <ColNames>cno_fk</ColNames>
+      <RefColNames>cno</RefColNames>
+      <RefTableName>category</RefTableName>
+    </foreign-key>
+    <index id="71" parent="29" name="PRIMARY">
+      <ColNames>pno</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="72" parent="29" name="FKqk00dnsxiu2pyvmhlnqo1a7qa">
+      <ColNames>cno_fk</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="73" parent="29" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>

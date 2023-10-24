@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/member")
+@CrossOrigin("http://192.168.17.10:3000")
 public class MemberController {
     // Controller -> Service 요청
     // Controller <- Service 응답
@@ -77,8 +78,8 @@ public class MemberController {
     public boolean login(HttpServletRequest request, @RequestBody MemberDto memberDto) {
 
         HttpSession session = request.getSession();
-        session.setAttribute("loginDto", memberService.login(memberDto));
-        MemberDto loginDto = (MemberDto)session.getAttribute("loginDto");
+        MemberDto loginDto = memberService.login(memberDto);
+        session.setAttribute("loginDto", loginDto );
 
         if(loginDto!= null){
 

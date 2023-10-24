@@ -17,6 +17,7 @@ import Assi from "./과제/과제1/Assi";
 import Login from "./member/Login";
 import Signup from "./member/Signup";
 import Comment from "./example/day02/Comment";
+import Axios컴포넌트 from "./example/day04/1_Axios컴포넌트";
 
 
 export default function Index ( props ){
@@ -39,6 +40,7 @@ export default function Index ( props ){
                         <Route path={'/example/day02/CommentList'} element={<CommentList/>}/>
                         <Route path={'/과제/과제2/Assi'} element={<Assi/>}/>
                         <Route path={'/과제/과제2/Component'} element={<Component/>}/>
+                        <Route path={'/example/day04/1_Axios컴포넌트'} element={<Axios컴포넌트/>}/>
 
                     {/* 회원 */}
                     <Route path={'/login'} element={ <Login /> } />
