@@ -14,9 +14,9 @@ export default function Signup(){
 
         }
         axios
-            .post('http://192.168.17.10:80/member/post', data)
+            .post('/member/post', data)
             .then( r => {
-                if(r.data) { alert("회원가입 성공");  window.location.href = '/login'; }
+                if(r.data) { alert("회원가입 성공");  window.location.href = "/login"; }
                 else { alert("회원가입 실패") }
             })
 

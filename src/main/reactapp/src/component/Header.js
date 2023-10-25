@@ -1,8 +1,17 @@
 import { Link } from 'react-router-dom';
 import styles from './css/Header.css';
-
+import axios from "axios";
 
 export default function Header ( props ){
+
+    // 회원정보 호출
+    axios
+        .get('/member/get')
+        .then( r => {
+            console.log("r.data: "+r.data)
+
+        })
+
     return(<>
 
         <header>

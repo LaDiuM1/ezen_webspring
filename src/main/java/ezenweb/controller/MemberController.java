@@ -10,7 +10,6 @@ import javax.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/member")
-@CrossOrigin("http://192.168.17.10:3000")
 public class MemberController {
     // Controller -> Service 요청
     // Controller <- Service 응답
@@ -39,7 +38,7 @@ public class MemberController {
 
     // 세션 구현시 회원 정보 호출
     @GetMapping("/get")
-    public MemberDto getMember(HttpServletRequest request, @RequestParam("mno") int mno) {
+    public MemberDto getMember(HttpServletRequest request) {
 
         HttpSession session = request.getSession();
 

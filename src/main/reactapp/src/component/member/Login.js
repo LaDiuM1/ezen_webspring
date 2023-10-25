@@ -19,7 +19,7 @@ export default function Login(){
         }
 
         axios
-            .post('http://192.168.17.10:80/member/login', data)
+            .post('/member/login', data)
             .then( r => {
                 if(r.data) { alert("로그인 성공")
                     window.location.href = "/";
