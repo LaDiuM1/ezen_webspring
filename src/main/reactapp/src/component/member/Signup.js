@@ -1,6 +1,8 @@
 import axios from "axios";
 import {Link} from "react-router-dom";
 import styles from '../css/login.css';
+import {useState} from "react";
+
 export default function Signup(){
 
     // 회원 가입 버튼 클릭 시
@@ -23,15 +25,41 @@ export default function Signup(){
     }
 
 
+
+    let [mid, setMid] = useState('');
+    let [midCheck, setMidCheck] = useState('');
+
+    const midValueChange = (e) => {
+
+        let changeMid = e.target.value;
+        setMid(changeMid);
+
+
+        axios
+            .get('/member/idCheck', { params : { 'mid' : mid } } )
+            .then(r => {
+                if(r.data){
+                    setMidCheck('사용중인 아이디입니다.');
+                }
+                else{
+                    setMidCheck('사용가능한 아이디입니다.');
+                }
+
+            })
+    }
+
+
     return(<>
 
         <div className={"signupContainer"}>
-
             <form>
                 <div className={"loginArea"}>
                     <div>
                         <div className={"textArea"}>아이디</div>
-                        <div className={"inputArea"}><input type={"text"} className={"mid"} /></div>
+                        <div className={"inputArea"}><input onKeyDown={midValueChange}  type={"text"} className={"mid"} /></div>
+                    </div>
+                    <div>
+                        <div> { midCheck }</div>
                     </div>
                     <div>
                         <div className={"textArea"}>이메일 </div>

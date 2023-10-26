@@ -20,7 +20,7 @@ import Component from './component/과제/과제2/Component.js';
 import CommentList from "./component/example/day02/CommentList";
 */
 import Index from './component/Index.js';
-
+import 생명주기컴포넌트 from './component/example/day05/2_생명주기컴포넌트'
 
 // 1. index.html에 <div id="root"> dom 객체 호출npx
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -105,5 +105,13 @@ public class MemberController {
 
     }
 
+    @GetMapping("/idCheck")
+    public boolean idCheck(@RequestParam String mid){
+
+        return memberService.idCheck(mid);
+
+    }
+
+
 
 }

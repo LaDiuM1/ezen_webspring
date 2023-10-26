@@ -6,6 +6,7 @@ import ezenweb.model.repository.MemberEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -150,6 +151,12 @@ public class MemberService {
 
     }
 
+    // 아이디 중복 체크
+    public boolean idCheck(@RequestParam String mid){
+
+        return memberEntityRepository.existsByMid(mid);
+
+    }
 
 
 
