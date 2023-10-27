@@ -9,5 +9,6 @@ import java.util.Optional;
 @Repository
 public interface MemberEntityRepository extends JpaRepository<MemberEntity, Integer> {
     boolean existsByMid ( String mid );
+    boolean existsByMnoAndMpassword( int mno, String mpassword );
 
 }

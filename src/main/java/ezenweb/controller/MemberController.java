@@ -17,6 +17,8 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
+    @Autowired HttpServletRequest request;
+
 
     // 1. 회원가입
     @PostMapping("/post")
@@ -49,7 +51,8 @@ public class MemberController {
     // 3. 회원정보 수정
     @PutMapping("/put")
     public boolean updateMember(@RequestBody MemberDto memberDto) {
-
+        System.out.println("memberDto = " + memberDto);
+        
         return memberService.updateMember(memberDto);
     }
 
@@ -58,7 +61,15 @@ public class MemberController {
     @DeleteMapping("/delete")
     public boolean deleteMember(@RequestParam("mno") int mno){
 
-        return memberService.deleteMember(mno);
+        HttpSession session = request.getSession();
+
+        boolean result = memberService.deleteMember(mno);
+
+        if(result){
+            session.removeAttribute("loginDto");
+        }
+
+        return result;
     }
 
     @PostMapping("/findId")
@@ -74,7 +85,7 @@ public class MemberController {
     }
 
     @PostMapping("/login")
-    public boolean login(HttpServletRequest request, @RequestBody MemberDto memberDto) {
+    public boolean login(@RequestBody MemberDto memberDto) {
 
         HttpSession session = request.getSession();
         MemberDto loginDto = memberService.login(memberDto);
@@ -90,7 +101,7 @@ public class MemberController {
     }
 
     @GetMapping("/logout")
-    public boolean logout(HttpServletRequest request) {
+    public boolean logout() {
 
         HttpSession session = request.getSession();
         MemberDto loginDto = (MemberDto)session.getAttribute("loginDto");
@@ -112,6 +123,21 @@ public class MemberController {
 
     }
 
+    // 내정보 페이지 정보 호출
+    @GetMapping("/getInfo")
+    public MemberDto getInfo (){
 
+        HttpSession session = request.getSession();
+        MemberDto memberDto = (MemberDto)session.getAttribute("loginDto");
+
+        return memberService.getInfo(memberDto.getMno());
+
+    }
+
+    @PostMapping("/passwordCheck")
+    public boolean passwordCheck(@RequestBody MemberDto memberDto){
+        System.out.println("memberDto = " + memberDto);
+        return memberService.passwordCheck(memberDto);
+    }
 
 }

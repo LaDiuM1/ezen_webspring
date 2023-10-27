@@ -1,6 +1,7 @@
 package ezenweb.controller;
 
 import ezenweb.model.dto.BoardDto;
+import ezenweb.model.dto.MemberDto;
 import ezenweb.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -51,6 +52,7 @@ public class BoardController {
         return boardService.deleteBoard(bno);
 
     }
+
 
 
 

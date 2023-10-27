@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.transaction.Transactional;
+import java.lang.reflect.Member;
 import java.util.List;
 import java.util.Optional;
 
@@ -158,8 +159,31 @@ public class MemberService {
 
     }
 
+    // 내정보 페이지 데이터 호출
+    public MemberDto getInfo(int mno){
+        Optional<MemberEntity> OptionalEntity = memberEntityRepository.findById(mno);
+        MemberDto memberDto = new MemberDto();
 
+        if(OptionalEntity.isPresent()){
+            MemberEntity entity = OptionalEntity.get();
 
+            memberDto.setMid(entity.getMid());
+            memberDto.setMemail(entity.getMemail());
+            memberDto.setMname(entity.getMname());
+            memberDto.setMphone(entity.getMphone());
+            memberDto.setMno(entity.getMno());
+            memberDto.setMpassword(entity.getMpassword());
+
+        }
+
+        return memberDto;
+
+    }
+
+    // 패스워드 체크 함수
+    public boolean passwordCheck(@RequestBody MemberDto memberDto){
+        return memberEntityRepository.existsByMnoAndMpassword(memberDto.getMno(), memberDto.getMpassword());
+    }
 
 
 }

@@ -6,16 +6,22 @@ import {useState, useEffect} from "react";
 export default function Header ( props ){
 
     let [ login, setLogin ] = useState(null);
-    useEffect( ()=>{ console.log('[3]Effect 실행') } , [ login ])
 
-    // 회원정보 호출
-    axios
-        .get('/member/get')
-        .then( r => {
-            if( r.data != '' ){
-                setLogin( r.data );
-            }
-        })
+    // 회원정보 호출, useEffect에 []를 사용해 최초 1회만 실행
+    useEffect( ()=>{
+        axios
+            .get('/member/get')
+            .then( r => {
+                if( r.data != '' ){
+                    setLogin( r.data );
+                    sessionStorage.setItem( 'login_token', JSON.stringify(r.data ));
+                    setLogin( JSON.parse( sessionStorage.getItem( 'login_token' )))
+                }
+            })
+    } , [ ])
+
+
+
 
 
     function logout(){
@@ -23,7 +29,9 @@ export default function Header ( props ){
             .get('/member/logout')
             .then( r => {
                 if (!r.data) {
-                    //setLogin( null );
+                    setLogin( null );
+                    window.location.href = '/';
+
                 }
             })
 
@@ -40,10 +48,16 @@ export default function Header ( props ){
                     <li> <Link to={'/'}> 비회원게시판 </Link> </li>
                     <li> <Link to={'/'}> 회원게시판 </Link> </li>
 
-                    <li> <Link to={'/signup'}> 회원가입 </Link> </li>
+
                     {
-                        login == null ? (<> <li> <Link to={'/login'}> 로그인 </Link> </li> </>) :
-                            (<><li> <Link to={'/'} onClick={logout} > 로그아웃 </Link> </li></>)
+                        login == null ? (<>
+                                <li> <Link to={'/signup'}> 회원가입 </Link> </li>
+                                <li> <Link to={'/login'}> 로그인 </Link> </li>
+                            </>) :
+                            (<>
+                                <li> <Link to={'/info'}> 내정보 </Link> </li>
+                                <li> <div onClick={logout} > 로그아웃 </div> </li>
+                            </>)
                     }
 
                 </ul>
